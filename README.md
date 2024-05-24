@@ -37,7 +37,7 @@ CONTAINER ID   IMAGE              COMMAND                  CREATED          STAT
 # Other issues
 
 * When adding new forks/branches to already running server(if you want to add a totally new fork that is not in the current scripts), the data is copied from trunk files which is prefilled with data of the trunk milestones, etc. To fix this the files need to be copied, but all data needs to be removed in logfiles and similar. [Issue description](https://github.com/Rytisgit/dgamelaunch-dcss-forks-server/issues/4)
-* The crontab is set up unreliably. Restarting the server seems to write multiple times to the crontab, without clearing it correctly. And it doesn't seem to activate on just invoking it with the entrypoint. Something to figure out how to have it work corrctly.
+* ~~The crontab is set up unreliably. Restarting the server seems to write multiple times to the crontab, without clearing it correctly. And it doesn't seem to activate on just invoking it with the entrypoint. Something to figure out how to have it work corrctly.~~ This was a problem before, and seems to not be a problem anymore after the latest fix I applied. 
 * ccache is installed, but not actually setup to be used in the compilation. Using `ccache --show-stats` shows that no files are being cached or hit when compiling. This would be good to set up for faster builds.
 * Make sure that when building the image, the checked out files have the correct line endings. I've had dgl perl scripts not working due to building with windows line ending checkout when the docker was running on linux. Had to figure out by googling.
 
